@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function updatePosts(){
 
-    fetch("http://192.168.15.8:5000/api/all").then(res => {
+    fetch("http://localhost:5000/api/all").then(res => {
         return res.json()
     }).then(json => {
 
@@ -43,7 +43,7 @@ function newPost(){
                     headers:new Headers({'content-type' : 'application/json'}),
                     body: JSON.stringify(post)}
 
-    fetch("http://192.168.15.8:5000/api/new", options).then(res => {
+    fetch("http://localhost:5000/api/new", options).then(res => {
         updatePosts();
         document.getElementById("title").value = "";
         document.getElementById("description").value = "";
@@ -56,7 +56,7 @@ function deletePost(postId) {
         method: "DELETE",
         headers: new Headers({'content-type': 'application/json'})
     };
-    fetch(`http://192.168.15.8:5000/api/delete?id=${postId}`, options) 
+    fetch(`http://localhost:5000/api/delete?id=${postId}`, options) 
     .then(() => {
         updatePosts();
     })

@@ -4,10 +4,10 @@ const cors = require('cors')
 const router = express.Router();
 
 const options ={
-    origin: ["http://localhost:5000", "https://notice-portal.vercel.app"] //coloco o dominio na whitelist de dominios que podem fazer requisições para o meu backend
+    // origin: ["http://localhost:5000"] //coloco o dominio na whitelist de dominios que podem fazer requisições para o meu backend
 }
 
-router.use(cors()) //permite que outros dominios faças fetchs para o meu backend.
+// router.use(cors()) //permite que outros dominios faças fetchs para o meu backend.
 
 router.get("/all", (req, res) => {
     // Passando o objeto para string
